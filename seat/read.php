@@ -1,7 +1,7 @@
 <?php
 include('../db.php');
 
-$query = mysqli_query($con,"SELECT * FROM seat WHERE available=1") or die(mysqli_error($con));
+$query = mysqli_query($con,"SELECT * FROM seats WHERE available=1") or die(mysqli_error($con));
 $array_data = array();
 
 while($data = mysqli_fetch_assoc($query)){
