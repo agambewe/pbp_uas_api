@@ -16,13 +16,13 @@ $query_users = mysqli_query($con,"SELECT * FROM users WHERE email='$email'") or 
         if($query_users){
           while($data_users = mysqli_fetch_assoc($query_users)){
             $id_old = $data_users['seat'];
-            $seat = $data_users['seat'];
+            $currentBook = $data_users['currentBook'];
             if($id_old!="0"){
               $update_old = "UPDATE seats SET available=1 WHERE id='$id_old'";
               $exequery_old = mysqli_query($con,$update_old);
             }
             
-            if($seat!="0" && $id_old!="0"){
+            if($currentBook!="0" && $id_old!="0"){
               $fileName = "../user/QRcode/".$email.".png";
               QRcode::png($email, $fileName, "M", 4, 4);
                 $dataImage = "http://pbp.api.drugsative.xyz/user/QRcode/".$email.".png";
