@@ -6,10 +6,13 @@ $title = $_POST['title'];
 $genre = $_POST['genre'];
 $synopsis = $_POST['synopsis'];
 $available = 1;
-$image = "default.jpg";
+if(isset($_POST['image'])){
+  $image = $_POST['image'];
+}
+$image = "http://andrewcmaxwell.com/wp-content/themes/acm_2014/images/book_not_found.png";
 
 
-$query = mysqli_query($con,"INSERT INTO books(title,genre,synopsis,available,image) VALUES ('$title','$genre','$synopsis','$available','$gambar')");
+$query = mysqli_query($con,"INSERT INTO books(title,genre,synopsis,available,image) VALUES ('$title','$genre','$synopsis','$available','$image')");
 $response = array();
 if($query)
 {
