@@ -31,7 +31,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
 
                         while($dataSeat = mysqli_fetch_assoc($setSeat)){
                             $respose['seat'] = $dataSeat['seat'];
-                            $respose['seat_id'] = $dataSeat['id'];
+                            $respose['seatId'] = $dataSeat['id'];
                         }
                     }else{
                         $respose['seat'] = $data['seat'];
@@ -44,7 +44,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
 
                         while($dataBook = mysqli_fetch_assoc($setBook)){
                             $respose['currentBook'] = $dataBook['title'];
-                            $respose['currentBook_id'] = $dataBook['id'];
+                            $respose['currentBookId'] = $dataBook['id'];
                         }
                     }else{
                         $respose['currentBook'] = $data['currentBook'];
