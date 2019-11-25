@@ -8,7 +8,7 @@ $email = $_POST['email'];
 if(isset($_POST['currentBook'])){
   $currentBook = $_POST['currentBook'];
 }else{
-  $currentBook = "empty";
+  $currentBook = "0";
 }
 
 //user
@@ -17,15 +17,15 @@ $query_users = mysqli_query($con,"SELECT * FROM users WHERE email='$email'") or 
           while($data_users = mysqli_fetch_assoc($query_users)){
             $id_old = $data_users['currentBook'];
             $seat = $data_users['seat'];
-            if($id_old!="empty"){
+            if($id_old!="0"){
               $update_old = "UPDATE books SET available=1 WHERE id='$id_old'";
               $exequery_old = mysqli_query($con,$update_old);
             }
             
-            if($seat!="empty" && $id_old!="empty"){
+            if($seat!="0" && $id_old!="0"){
               $fileName = "../user/QRcode/".$email.".png";
               QRcode::png($email, $fileName, "M", 4, 4);
-                $dataImage = "http://localhost/pbp_uas/user/QRcode/".$email.".png";
+                $dataImage = "http://pbp.api.drugsative.xyz/user/QRcode/".$email.".png";
             }else{
                 $dataImage = "https://cdn1.iconfinder.com/data/icons/browser-5/100/ui-brower-go-24-512.png";
             }
