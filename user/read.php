@@ -23,15 +23,28 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
                         $isScanned = "Checked in";
                     }
                     $respose['isScanned'] = $isScanned;
-                    $respose['seat'] = $data['seat'];
+
+                    if($data['seat']!="0"){
+                        $crnSeat = $data['seat'];
+                        $setSeat = mysqli_query($con,"SELECT * FROM seats WHERE id = '$crnSeat'")
+                        or die(mysqli_error($con));
+
+                        while($dataSeat = mysqli_fetch_assoc($setSeat)){
+                            $respose['seat'] = $dataSeat['seat'];
+                            $respose['seat_id'] = $dataSeat['id'];
+                        }
+                    }else{
+                        $respose['seat'] = $data['seat'];
+                    }
 
                     if($data['currentBook']!="0"){
                         $crnBook = $data['currentBook'];
-                        $setBook = mysqli_query($con,"SELECT title FROM books WHERE id = '$crnBook'")
+                        $setBook = mysqli_query($con,"SELECT * FROM books WHERE id = '$crnBook'")
                         or die(mysqli_error($con));
 
                         while($dataBook = mysqli_fetch_assoc($setBook)){
                             $respose['currentBook'] = $dataBook['title'];
+                            $respose['currentBook_id'] = $dataBook['id'];
                         }
                     }else{
                         $respose['currentBook'] = $data['currentBook'];
