@@ -13,8 +13,8 @@ if(isset($_POST['name'])){
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $hash = md5(rand(0,1000));
     $status = 0;
-    $seat = "empty";
-    $currentBook = "empty";
+    $seat = "0";
+    $currentBook = "0";
     $isScanned = 0;
 
     $input = mysqli_query($con,"INSERT INTO users(name,email,password,hash,status,seat,currentBook,isScanned) 

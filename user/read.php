@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
                     $respose['isScanned'] = $isScanned;
                     $respose['seat'] = $data['seat'];
 
-                    if($data['currentBook']!="empty"){
+                    if($data['currentBook']!="0"){
                         $crnBook = $data['currentBook'];
                         $setBook = mysqli_query($con,"SELECT title FROM books WHERE id = '$crnBook'")
                         or die(mysqli_error($con));
