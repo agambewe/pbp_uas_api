@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $genre = $_POST['genre'];
     $synopsis = $_POST['synopsis'];
 
-    $query = mysqli_query($con,"UPDATE users SET title='$title', genre='$genre', synopsis='$synopsis' WHERE id='$id'")or die(mysqli_error($con));
+    $query = mysqli_query($con,"UPDATE books SET title='$title', genre='$genre', synopsis='$synopsis' WHERE id='$id'")or die(mysqli_error($con));
     if($query) {
         $respose['code'] = 1;
         $respose['message'] = "Success update";
