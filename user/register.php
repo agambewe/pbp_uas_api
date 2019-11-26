@@ -17,8 +17,6 @@ if(isset($_POST['name'])){
     $currentBook = "0";
     $isScanned = 0;
 
-    $input = mysqli_query($con,"INSERT INTO users(name,email,password,hash,status,seat,currentBook,isScanned) 
-            VALUES('$name','$email','$password','$hash','$status','$seat','$currentBook','$isScanned')")or die(mysqli_error($con));
     if($input){
             $base_url = "http://localhost/pbp_uas/user/";
             $toko ="AreKKaoS";
@@ -47,6 +45,8 @@ if(isset($_POST['name'])){
                 {
                     $respose['code'] = 1;
                     $respose['message'] = "Daftar selesai , Silahkan cek email anda.";
+                    $input = mysqli_query($con,"INSERT INTO users(name,email,password,hash,status,seat,currentBook,isScanned) 
+            VALUES('$name','$email','$password','$hash','$status','$seat','$currentBook','$isScanned')")or die(mysqli_error($con));
                 }
     }else{
         $respose['code'] = 0;
