@@ -27,7 +27,7 @@ if(isset($_POST['name'])){
     ";
         $mail->SMTPDebug = 2;  
         $mail->IsSMTP();        //Sets Mailer to send message using SMTP
-        $mail->Host = 'staff@web.drugsative.xyz';  //Sets the SMTP hosts of your Email hosting, this for Godaddy
+        $mail->Host = 'mail.drugsative.xyz';  //Sets the SMTP hosts of your Email hosting, this for Godaddy
         $mail->Port = 587;        //Sets the default SMTP server port
         $mail->SMTPAuth = true;       //Sets SMTP authentication. Utilizes the Username and Password variables
         // $mail->Username = 'arekkaos@gmail.com';     //Sets SMTP username
