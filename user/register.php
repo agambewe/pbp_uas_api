@@ -33,7 +33,7 @@ if(isset($_POST['name'])){
         // $mail->Username = 'arekkaos@gmail.com';     //Sets SMTP username
         // $mail->Password = 'Arek_Kaos!#';     //Sets SMTP password
         $mail->Username = 'drugsati_agam';
-        $mail->Password = 'kTl4M0bWn;%l';
+        $mail->Password = 'PAW_ICONIC!';
         $mail->SMTPSecure = 'ssl';       //Sets connection prefix. Options are "", "ssl" or "tls"
         $mail->From = 'staff@arekkaos.com';   //Sets the From email address for the message
         $mail->FromName = $toko;     //Sets the From name of the message
