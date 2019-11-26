@@ -27,13 +27,13 @@ if(isset($_POST['name'])){
     ";
         $mail->SMTPDebug = 2;  
         $mail->IsSMTP();        //Sets Mailer to send message using SMTP
-        $mail->Host = 'mail.web.drugsative.xyz';  //Sets the SMTP hosts of your Email hosting, this for Godaddy
+        $mail->Host = 'mail.drugsative.xyz';  //Sets the SMTP hosts of your Email hosting, this for Godaddy
         $mail->Port = 465;        //Sets the default SMTP server port
         $mail->SMTPAuth = true;       //Sets SMTP authentication. Utilizes the Username and Password variables
         // $mail->Username = 'arekkaos@gmail.com';     //Sets SMTP username
         // $mail->Password = 'Arek_Kaos!#';     //Sets SMTP password
-        $mail->Username = 'staff';
-        $mail->Password = 'PAW_ICONIC!';
+        $mail->Username = 'drugsati_agam';
+        $mail->Password = 'kTl4M0bWn;%l';
         $mail->SMTPSecure = 'ssl';       //Sets connection prefix. Options are "", "ssl" or "tls"
         $mail->From = 'staff@arekkaos.com';   //Sets the From email address for the message
         $mail->FromName = $toko;     //Sets the From name of the message
