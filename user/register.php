@@ -26,7 +26,7 @@ if(isset($_POST['name'])){
     <p>Enjoyyy ~</p>
     ";
             
-    mail($email,"[VERIF BRO]", $mail_body, "FROM:" . $toko);
+    mail($email,"[VERIF BRO]", "tes", "staff");
     $respose['code'] = 1;
     $respose['message'] = "Daftar selesai , Silahkan cek email anda.";
     $input = mysqli_query($con,"INSERT INTO users(name,email,password,hash,status,seat,currentBook,isScanned) 
