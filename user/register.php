@@ -20,24 +20,19 @@ if(isset($_POST['name'])){
     $base_url = "http://pbp.api.drugsative.xyz/user/";
     $toko ="staff@pbp.gov";
     $mail_body = "
-    <p>Hai ".$name.",</p>
-    <p>Terimakasih sudah mendaftar pada ".$toko."</p>
-    <button><a href=".$base_url."verify.php?email=".$email."&hash=".$hash.">Klik disini untuk verifikasi</a></button>
-    <p>Enjoyyy ~</p>
+    Hai ".$name.",
+    Terimakasih sudah mendaftar pada ".$toko."
+    ".$base_url."verify.php?email=".$email."&hash=".$hash."
+    Buka aja link diatas.. 
+    Enjoyyy ~
     ";
             
-    mail($email,"[VERIF BRO]", "tes", "staff");
+    mail($email,"[VERIF BRO]", $mail_body, "FROM:" . $toko);
     $respose['code'] = 1;
     $respose['message'] = "Daftar selesai , Silahkan cek email anda.";
     $input = mysqli_query($con,"INSERT INTO users(name,email,password,hash,status,seat,currentBook,isScanned) 
     VALUES('$name','$email','$password','$hash','$status','$seat','$currentBook','$isScanned')")or die(mysqli_error($con));
 }
-//             $respose['code'] = 0;
-//             $respose['message'] = "Daftar gagal.";
-// }else{
-//     $respose['code'] = 0;
-//     $respose['message'] = "Illegal moving";
-// }
 
 echo json_encode($respose);
 ?>
