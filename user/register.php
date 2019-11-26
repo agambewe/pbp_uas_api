@@ -21,7 +21,7 @@ if(isset($_POST['name'])){
     $toko ="staff@pbp.gov";
     $mail_body = "
     Hai ".$name.",
-    Terimakasih sudah mendaftar pada ".$toko."
+    Terimakasih sudah mendaftar
     ".$base_url."verify.php?email=".$email."&hash=".$hash."
     Buka aja link diatas.. 
     Enjoyyy ~
