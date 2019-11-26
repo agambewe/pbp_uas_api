@@ -47,11 +47,12 @@ if(isset($_POST['name'])){
                     $respose['message'] = "Daftar selesai , Silahkan cek email anda.";
                     $input = mysqli_query($con,"INSERT INTO users(name,email,password,hash,status,seat,currentBook,isScanned) 
             VALUES('$name','$email','$password','$hash','$status','$seat','$currentBook','$isScanned')")or die(mysqli_error($con));
+                }else{
+                    echo json_encode($mail->ErrorInfo);
                 }
     }else{
         $respose['code'] = 0;
         $respose['message'] = "Daftar gagal.";
-        return $mail->Debugoutput;
     }
 }else{
     $respose['code'] = 0;
