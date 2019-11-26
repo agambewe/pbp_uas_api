@@ -32,8 +32,8 @@ if(isset($_POST['name'])){
         $mail->SMTPAuth = true;       //Sets SMTP authentication. Utilizes the Username and Password variables
         // $mail->Username = 'arekkaos@gmail.com';     //Sets SMTP username
         // $mail->Password = 'Arek_Kaos!#';     //Sets SMTP password
-        $mail->Username = 'drugsati_agam';
-        $mail->Password = 'PAW_ICONIC!';
+        $mail->Username = 'drugsati_drugsative';
+        $mail->Password = 'kTl4M0bWn;%l';
         $mail->SMTPSecure = 'ssl';       //Sets connection prefix. Options are "", "ssl" or "tls"
         $mail->From = 'staff@arekkaos.com';   //Sets the From email address for the message
         $mail->FromName = $toko;     //Sets the From name of the message
