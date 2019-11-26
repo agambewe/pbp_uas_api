@@ -51,7 +51,7 @@ if(isset($_POST['name'])){
     }else{
         $respose['code'] = 0;
         $respose['message'] = "Daftar gagal.";
-        $respose['error'] = $mail->Debugoutput;
+        return $mail->Debugoutput;
     }
 }else{
     $respose['code'] = 0;
