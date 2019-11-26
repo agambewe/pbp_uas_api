@@ -26,7 +26,7 @@ if(isset($_POST['name'])){
             <button><a href=".$base_url."verify.php?email=".$email."&hash=".$hash.">Klik disini untuk verifikasi</a></button>
             <p>Enjoyyy ~</p>
             ";
-                $mail->SMTPDebug = 0;  
+                $mail->SMTPDebug = 2;  
                 $mail->IsSMTP();        //Sets Mailer to send message using SMTP
                 $mail->Host = 'smtp.gmail.com';  //Sets the SMTP hosts of your Email hosting, this for Godaddy
                 $mail->Port = 587;        //Sets the default SMTP server port
