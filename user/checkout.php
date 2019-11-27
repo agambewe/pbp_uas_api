@@ -13,8 +13,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if($search){
         while($data = mysqli_fetch_assoc($search)){
             if($data['seat']!=0 && $data['currentBook']!=0){
-                $input = mysqli_query($con,"INSERT INTO logs(name,email,seat,currentBook,isScanned) 
-    SELECT name, email, seat, currentBook, isScaned FROM users)")or die(mysqli_error($con));
+                $input = mysqli_query($con,"INSERT INTO logs(name,email,seat,currentBook) 
+    SELECT name, email, seat, currentBook FROM users")or die(mysqli_error($con));
             }
         }
     }
