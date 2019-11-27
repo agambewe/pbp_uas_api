@@ -29,7 +29,7 @@ while ($data = mysqli_fetch_array($query)){
     $pdf->Cell(10,6,$no,1,0);
     $pdf->Cell(55,6,$data['email'],1,0);
     $pdf->Cell(55,6,$data['seat'],1,0);
-    $pdf->Cell(55,6,$data['curgrentBook'],1,1);
+    $pdf->Cell(55,6,$data['currentBook'],1,1);
     $no++;
 }
 
