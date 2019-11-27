@@ -6,6 +6,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $seat = $_POST['seat'];
     $email = $_POST['email'];
     $currentBook = $_POST['currentBook'];
+    $seatName = $_POST['seatName'];
+    $bookName = $_POST['bookName'];
     
     $search = mysqli_query($con,"SELECT * FROM users WHERE email='$email' LIMIT 1")
         or die(mysqli_error($con));
@@ -13,8 +15,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if($search){
         while($data = mysqli_fetch_assoc($search)){
             if($data['seat']!=0 && $data['currentBook']!=0){
-                $input = mysqli_query($con,"INSERT INTO logs(name,email,seat,currentBook) 
-    SELECT name, email, seat, currentBook FROM users")or die(mysqli_error($con));
+                $input = mysqli_query($con,"INSERT INTO logs(email,seat,currentBook) 
+                VALUES('$email','$seatName','$bookName')")or die(mysqli_error($con));
+    //  SELECT name, email, seat, currentBook FROM users WHERE email='$email'")or
             }
         }
     }
