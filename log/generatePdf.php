@@ -12,7 +12,7 @@ $pdf->AddPage();
 // Setting jenis font
 $pdf->SetFont('Arial','B',16);
 // Membuat string
-$pdf->Cell(260,7,'Log',0,1,'C');
+$pdf->Cell(260,7,'Logs',0,1,'C');
 // Setting spasi kebawah supaya tidak rapat
 $pdf->Cell(10,7,'',0,1);
 
