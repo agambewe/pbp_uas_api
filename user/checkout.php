@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     if($search){
         while($data = mysqli_fetch_assoc($search)){
-            if($data['seat']!=0 && $data['currentBook']!=0){
+            if($data['seat']!=0 && $data['currentBook']!=0 && $data['isScanned']!=0){
                 $input = mysqli_query($con,"INSERT INTO logs(email,seat,currentBook) 
                 VALUES('$email','$seatName','$bookName')")or die(mysqli_error($con));
     //  SELECT name, email, seat, currentBook FROM users WHERE email='$email'")or
